@@ -1,0 +1,25 @@
+name: ${NAME}
+
+services:
+  postfix:
+    container_name: ${NAME}-postfix
+    hostname: ${NAME}
+    build:
+      context: ./postfix
+      network: host
+    network_mode: "host"
+    volumes:
+      - ${SSL_CERTIFICATE_LOCATION}:/etc/letsencrypt/live/rhthr.com:ro
+    env_file:
+      - .env
+  dovecot:
+    container_name: ${NAME}-dovecot
+    hostname: ${NAME}
+    build:
+      context: ./dovecot
+      network: host
+    network_mode: "host"
+    volumes:
+      - ${SSL_CERTIFICATE_LOCATION}:/etc/letsencrypt/live/rhthr.com:ro
+    env_file:
+      - .env
