@@ -1,0 +1,11 @@
+$TTL	300
+@	IN	SOA	ns1.rhthr.com.	admin.rhthr.com.	(
+			1       ; Serial
+			300		; Refresh
+			180		; Retry
+			600		; Expire
+			300	)	; Negative Cache TTL
+
+@	IN	NS	ns1.rhthr.com.
+@	IN	NS	ns2.rhthr.com.
+23	IN	PTR	mail.rhthr.com.

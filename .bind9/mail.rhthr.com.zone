@@ -1,0 +1,33 @@
+$TTL    300
+@	IN	SOA	ns1.rhthr.com.	admin.rhthr.com.	(
+			1       ; Serial
+			300		; Refresh
+			180		; Retry
+			600		; Expire
+			300	)	; Negative Cache TTL
+
+@			        IN	NS	    ns1.rhthr.com.
+@			        IN	NS	    ns2.rhthr.com.
+@			        IN	MX	    10 mail.rhthr.com.
+@                   IN	A	    179.209.42.23
+ns1                 IN	A	    179.209.42.23
+ns2                 IN	A	    179.209.42.23
+mail                IN  A       179.209.42.23
+@                   IN	AAAA    2804:14c:4e:828f:18e2:11ad:8687:c721
+ns1                 IN	AAAA	2804:14c:4e:828f:18e2:11ad:8687:c721
+ns2                 IN	AAAA	2804:14c:4e:828f:18e2:11ad:8687:c721
+mail                IN	AAAA	2804:14c:4e:828f:18e2:11ad:8687:c721
+@			        IN	TXT	    "brevo-code:b08df0d64dee3d6891bdb7a1affe15b6"
+@			        IN	TXT	    "v=spf1 mx include:spf.brevo.com ~all"
+default._domainkey	IN	TXT	    (
+    "v=DKIM1; h=sha256; k=rsa; "
+    "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwixIRFHhx4kuxQdpadJkRP7xU1/oU"
+    "S59QYZMwmPaT3PrZxQ4hdbm0C1+/SfM6wIjbjlvbdrSDygojzyCRw/HCTTXIc5FmuA2gLQBDC6I/"
+    "qzrNiIUPWtp5YYkGfuOp0feaScXOixs1XmAjYcDzxHK1sLo0uypaIqq9acXzgSxcQyMEW2t6w4Hm"
+    "/ZAJRk7AY3ip8rEg/TG929+fuwHKwOcgjVprkCxYtpdF8M0iBqpXCDVyluE/WBZnfQbDV4jtCvST"
+    "9BxpXXRdGKozNAr0fpyt+z7/w7iiDgtoNFH2dC3nMiGgArVqH/b20Ut+tR2/SGomZxpa0toiNKlc"
+    "Q7kkRPmpQIDAQAB"
+)
+brevo1._domainkey	IN	CNAME	b1.rhthr-com.dkim.brevo.com.
+brevo2._domainkey	IN	CNAME	b2.rhthr-com.dkim.brevo.com.
+_dmarc			    IN	TXT	    "v=DMARC1; p=none; pct=100; rua=mailto:dmarc-reports@rhthr.com"
