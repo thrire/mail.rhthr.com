@@ -1,9 +1,9 @@
-name: ${NAME}
+name: ${MAIL_SUBDOMAIN_NAME}
 
 services:
   postfix:
-    container_name: ${NAME}-postfix
-    hostname: ${NAME}
+    container_name: ${MAIL_SUBDOMAIN_NAME}-postfix
+    hostname: ${MAIL_SUBDOMAIN_NAME}
     build:
       context: ./postfix
       network: host
@@ -13,8 +13,8 @@ services:
     env_file:
       - .env
   dovecot:
-    container_name: ${NAME}-dovecot
-    hostname: ${NAME}
+    container_name: ${MAIL_SUBDOMAIN_NAME}-dovecot
+    hostname: ${MAIL_SUBDOMAIN_NAME}
     build:
       context: ./dovecot
       network: host
